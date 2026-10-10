@@ -4,11 +4,7 @@ from Load import load_data
 
 from dotenv import load_dotenv
 import os
-import yfinance as yf
-import pandas as pd
-import psycopg2
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
 
 load_dotenv()
 databaseURL = os.getenv("Database_URL")

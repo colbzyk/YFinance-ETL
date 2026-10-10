@@ -1,4 +1,3 @@
-import pandas as pd
 
 def load_data(engine, data):
     data.to_sql(

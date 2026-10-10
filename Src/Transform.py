@@ -1,4 +1,3 @@
-import pandas as pd
 
 def transform_data(data):
     df_flat = data.stack(level='Ticker', future_stack=True).reset_index()
