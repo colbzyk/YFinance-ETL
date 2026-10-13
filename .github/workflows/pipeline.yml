@@ -16,7 +16,7 @@ jobs:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - run: python Pipeline.py
-        working-directory: Src
+        working-directory: src
         env:
           Database_URL: ${{ secrets.DATABASE_URL }}
 
