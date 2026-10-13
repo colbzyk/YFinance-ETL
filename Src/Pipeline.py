@@ -12,6 +12,6 @@ engine = create_engine(databaseURL)
 
 tickers = ["MSFT", "JPM", "UNH", "XOM", "PG", "CAT", "AMZN", "PLD", "SPY"]
 
-data = extract_data(engine, tickers)
-data = transform_data(data)
-load_data(engine, data)
+ohlc_data, company_data = extract_data(engine, tickers)
+ohlc_data = transform_data(ohlc_data)
+load_data(engine, ohlc_data, company_data)
