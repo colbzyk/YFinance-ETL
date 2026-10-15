@@ -1,3 +1,5 @@
+import logging
+logger = logging.getLogger(__name__)
 
 def load_data(engine, ohlc_data, company_data):
     if company_data is not None:
@@ -7,6 +9,7 @@ def load_data(engine, ohlc_data, company_data):
             if_exists="append",
             index=False
         )
+        logger.info("Loading company_data to db sucessful")
 
     ohlc_data.to_sql(
         "portfolio_ohlc_data", 
@@ -14,4 +17,6 @@ def load_data(engine, ohlc_data, company_data):
         if_exists="append",
         index=False
     )
+    logger.info("Loading ohlc_data to db sucessful")
+
     

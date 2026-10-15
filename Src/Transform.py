@@ -1,3 +1,5 @@
+import logging
+logger = logging.getLogger(__name__)
 
 def transform_data(data):
     df_flat = data.stack(level='Ticker', future_stack=True).reset_index()
@@ -16,4 +18,5 @@ def transform_data(data):
 
     df_flat = df_flat[["date", "ticker", "open", "high", "low", "close", "volume"]]
 
+    logger.info(f"Flattened data to {len(df_flat)} rows")
     return df_flat
